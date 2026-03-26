@@ -16,12 +16,23 @@
         </div>
 
         <div id="gameScreen">
-            <div id="startTurtleGame" onclick="updateScreen('turtleGame')"></div>
+            <div class="startGameButtons" id="startTurtleGame" onclick="updateScreen('turtleGame')">1</div>
+            <div class="startGameButtons" id="">2</div>
         </div>
 
         <div id="turtleGameScreen">
             <div id="talkingTurtlePerson"></div>
             <div id="talkingTurtlePersonBubble"></div>
+            <div class="talkingNextButton" onclick="talkingTurtleGameNext('talkingNext')"></div>
+
+            <div id="turtleGuessItemContainer">
+                <div id="turtleGuessItem1" class="turtleGuessItem" onclick="turtleGuessItemChoice('jellyfish')"></div>
+                <div id="turtleGuessItem2" class="turtleGuessItem" onclick="turtleGuessItemChoice('bag')"></div>
+                <div id="turtleGuessItem3" class="turtleGuessItem" onclick="turtleGuessItemChoice('jellyfish')"></div>
+            </div>
+
+            <div id="turtleEnding"></div>
+            <div id="turtleEndingBubble"></div>
         </div>
     </div>
     

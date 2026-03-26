@@ -6,6 +6,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: lightblue;
+    overflow: hidden;
 }
 
 #startGameButton {
@@ -17,24 +18,16 @@
     background-color: white;
 }
 
-#startGameButton:hover {
-    cursor: pointer;
-}
-
 #gameScreen, #turtleGameScreen {
     display: none;
 }
 
-#startTurtleGame {
+.startGameButtons {
     height: 150px;
     width: 150px;
     position: relative;
     background-color: white;
     margin: auto;
-}
-
-#startTurtleGame:hover {
-    cursor: pointer;
 }
 
 #talkingTurtlePerson {
@@ -62,5 +55,108 @@
     background-color: white;
     position: relative;
     left: 250px;
-    bottom: -100px;
+    animation: talkingBubbleUp 1s ease-in;
+    animation-fill-mode: forwards;
+}
+
+@keyframes talkingBubbleUp {
+    0% {
+        bottom: -600px;
+    }
+    100% {
+        bottom: -100px;
+    }
+}
+
+.talkingNextButton {
+    height: 50px;
+    width: 100px;
+    background-color: white; 
+    position: relative;
+    left: 750px;
+    bottom: -300px;
+    animation: talkingNextButtonUp 1s ease-in;
+    animation-fill-mode: forwards;
+    animation-delay: 0.5s;
+}
+
+
+@keyframes talkingNextButtonUp {
+    0% {
+        bottom: -300px;
+    }
+
+    100% {
+        bottom: -100px;
+    }
+}
+
+#turtleGuessItemContainer {
+    height: 300px;
+    width: 700px;
+    background-color: pink;
+    position: relative;
+    bottom: -800px;
+    left: 100px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    animation: none;
+    animation-fill-mode: forwards;
+}
+
+.turtleGuessItem {
+    height: 200px;
+    width: 150px;
+    background-color: white; 
+    position: relative;
+
+    animation: turtleGuessItemFloat 1s ease-in infinite;
+}
+
+@keyframes turtleGuessItemFloat {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(5px);
+    }
+    100%{
+        transform: translateY(0px);
+    }
+}
+
+@keyframes turtleGuessItemContainerUp {
+    0% {
+        bottom: -800px;
+    }
+    100% {
+        bottom: 250px;
+    }
+}
+
+#turtleEnding {
+    height: 220px;
+    width: 220px;
+    background-color: lightskyblue; 
+    position: relative;
+    left: 100px;
+    bottom: 500px;
+}
+
+#turtleEndingBubble {
+    height: 220px;
+    width: 300px;
+    background-color: lightskyblue; 
+    position: relative;
+    left: 400px;
+    bottom: 800px;
+}
+
+
+/* hovering with pointer */
+#startGameButton:hover, .talkingNextButton:hover, .turtleGuessItem:hover, .startGameButtons:hover {
+    cursor: pointer;
 }
