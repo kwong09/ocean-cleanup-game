@@ -1,3 +1,9 @@
+.image {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 .screen {
     height: 600px;
     width: 900px;
@@ -7,6 +13,8 @@
     transform: translate(-50%, -50%);
     background-color: lightblue;
     overflow: hidden;
+
+    
 }
 
 #startGameButton {
@@ -107,10 +115,21 @@
     animation-fill-mode: forwards;
 }
 
+#turtleGuessItem1 {
+    background-image: url("assets/jellyfish1.png");
+}
+
+#turtleGuessItem2 {
+    background-image: url("assets/bag.png");
+}
+
+#turtleGuessItem3 {
+    background-image: url("assets/jellyfish2.png");
+}
+
 .turtleGuessItem {
     height: 200px;
     width: 150px;
-    background-color: white; 
     position: relative;
 
     animation: turtleGuessItemFloat 1s ease-in infinite;
@@ -140,19 +159,43 @@
 #turtleEnding {
     height: 220px;
     width: 220px;
-    background-color: lightskyblue; 
+    background-image: url("assets/turtle.png"); 
     position: relative;
     left: 100px;
-    bottom: 500px;
+    bottom: -800px;
+
+    animation: none;
+    animation-fill-mode: forwards;
 }
 
 #turtleEndingBubble {
-    height: 220px;
-    width: 300px;
+    height: 250px;
+    width: 400px;
     background-color: lightskyblue; 
     position: relative;
-    left: 400px;
-    bottom: 800px;
+    left: 350px;
+    bottom: -800px;
+    
+    animation: none;
+    animation-fill-mode: forwards;
+}
+
+@keyframes turtleEndingUp {
+    0% {
+        bottom: -800px;
+    }
+    100% {
+        bottom: 500px;
+    }
+}
+
+@keyframes turtleEndingBubbleUp {
+    0% {
+        bottom: -800px;
+    }
+    100% {
+        bottom: 800px;
+    }
 }
 
 

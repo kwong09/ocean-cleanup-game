@@ -13,6 +13,8 @@ var turtleGuessItemContainer = document.getElementById("turtleGuessItemContainer
 var turtleGuessItem1 = document.getElementById("turtleGuessItem1");
 var turtleGuessItem2 = document.getElementById("turtleGuessItem2");
 var turtleGuessItem3 = document.getElementById("turtleGuessItem3");
+var turtleEnding = document.getElementById("turtleEnding");
+var turtleEndingBubble = document.getElementById("turtleEndingBubble");
 
 function updateScreen(screenValue) {
     currentScreen = screenValue;
@@ -23,7 +25,7 @@ function updateScreen(screenValue) {
     }
 
     if (currentScreen == "turtleGame") {
-        screen.style.backgroundColor = "lightgreen";
+        screen.style.backgroundColor = "#34487C";
         gameScreen.style.display = "none";
         turtleGameScreen.style.display = "block";
     }
@@ -41,8 +43,8 @@ function addAnimation(object, animation) {
     object.style.animation = `${animation} 1s forwards`;
 }
 
-function talkingTurtleGameNext(text) {
-    if (text == "talkingNext") {
+function talkingNext(text) {
+    if (text == "turtle") {
         reverseAnimation(talkingTurtlePerson, "talkingPersonUp");
         reverseAnimation(talkingTurtlePersonBubble, "talkingBubbleUp");
         reverseAnimation(talkingNextButton, "talkingNextButtonUp");
@@ -54,4 +56,6 @@ function talkingTurtleGameNext(text) {
 function turtleGuessItemChoice(option) {
     reverseAnimation(turtleGuessItemContainer, "turtleGuessItemContainerUp");
 
+    addAnimation(turtleEnding, "turtleEndingUp");
+    addAnimation(turtleEndingBubble, "turtleEndingBubbleUp");
 }
