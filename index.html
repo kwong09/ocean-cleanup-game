@@ -5,25 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ocean Cleanup Game</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <div class="screen">
         <div id="homeScreen">
+            <div id="gameTitleContainer">
+                <div id="gameTitle" class="image"></div>
+            </div>
+            
             <div id="startGameButton" onclick="updateScreen('gameMenu')">
-
             </div>
         </div>
 
         <div id="gameScreen">
-            <div class="startGameButtons" id="startTurtleGame" onclick="updateScreen('turtleGame')">1</div>
-            <div class="startGameButtons" id="">2</div>
+            <div id="startGameButtonsContainer">
+                <div class="startGameButtons" id="startTurtleGame" onclick="updateScreen('turtleGame')">turtle</div>
+                <div class="startGameButtons" id="startSealGame" onclick="updateScreen('sealGame')">seal</div>
+                <div class="startGameButtons" id="startDolphinGame">dolphin</div>
+            </div>
         </div>
 
         <div id="turtleGameScreen">
             <div id="talkingTurtlePerson"></div>
             <div id="talkingTurtlePersonBubble"></div>
-            <div class="talkingNextButton" onclick="talkingNext('turtle')"></div>
+            <div class="nextButton" id="turtleNextButton" onclick="talkingNext('turtle')"></div>
 
             <div id="turtleGuessItemContainer">
                 <div id="turtleGuessItem1" class="turtleGuessItem image" onclick="turtleGuessItemChoice('jellyfish')"></div>
@@ -33,6 +42,10 @@
 
             <div class="image" id="turtleEnding"></div>
             <div id="turtleEndingBubble"></div>
+        </div>
+
+        <div id="sealGameScreen">
+            <div class="nextButton" id="sealNextButton"></div>
         </div>
     </div>
     
