@@ -30,8 +30,8 @@
         </div>
 
         <div id="turtleGameScreen">
-            <div id="talkingTurtlePerson"></div>
-            <div id="talkingTurtlePersonBubble"></div>
+            <div class="talkingPerson" id="talkingTurtlePerson"></div>
+            <div class="talkingPersonBubble" id="talkingTurtlePersonBubble"></div>
             <div class="nextButton" id="turtleNextButton" onclick="talkingNext('turtle')"></div>
 
             <div id="turtleGuessItemContainer">
@@ -45,7 +45,17 @@
         </div>
 
         <div id="sealGameScreen">
-            <div class="nextButton" id="sealNextButton"></div>
+            <div class="talkingPerson" id="talkingSealPerson"></div>
+            <div class="talkingPersonBubble" id="talkingSealPersonBubble"></div>
+            <div class="nextButton" id="sealNextButton" onclick="talkingNext('seal')"></div>
+
+            <div id="sealRemoveNetContainer">
+                <div class="image sealRemoveNet" id="seal"></div>
+                <div class="image sealRemoveNet" id="sealNet1" onclick="sealRemoveNet(sealNet1)"></div>
+                <div class="image sealRemoveNet" id="sealNet2" onclick="sealRemoveNet(sealNet2)"></div>
+                <div class="image sealRemoveNet" id="sealNet3" onclick="sealRemoveNet(sealNet3)"></div>
+                <div class="image sealRemoveNet" id="sealNet4" onclick="sealRemoveNet(sealNet4)"></div>
+            </div>
         </div>
     </div>
     

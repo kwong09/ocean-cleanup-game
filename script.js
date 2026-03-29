@@ -21,7 +21,14 @@ var turtleEnding = document.getElementById("turtleEnding");
 var turtleEndingBubble = document.getElementById("turtleEndingBubble");
 
 //seal game screen
+var talkingSealPerson = document.getElementById("talkingSealPerson");
+var talkingSealPersonBubble = document.getElementById("talkingSealPersonBubble");
 var sealNextButton = document.getElementById("sealNextButton");
+var sealRemoveNetContainer = document.getElementById("sealRemoveNetContainer");
+var sealNet1 = document.getElementById("sealNet1");
+var sealNet2 = document.getElementById("sealNet2");
+var sealNet3 = document.getElementById("sealNet3");
+var sealNet4 = document.getElementById("sealNet4");
 
 
 //animation functions
@@ -56,7 +63,7 @@ function updateScreen(screenValue) {
     
         addAnimation(talkingTurtlePerson, "talkingPersonUp");
         addAnimation(talkingTurtlePersonBubble, "talkingBubbleUp");
-        addAnimation(turtleNextButton, "turtleNextButtonUp");
+        addAnimation(turtleNextButton, "nextButtonUp");
     }
 
     if (currentScreen == "sealGame") {
@@ -64,18 +71,19 @@ function updateScreen(screenValue) {
         gameScreen.style.display = "none";
         sealGameScreen.style.display = "block";
 
-        addAnimation(sealNextButton, "sealNextButtonUp");
+        addAnimation(sealNextButton, "nextButtonUp");
     }
 }
 
-turtleNextCount = 0
+turtleNextCount = 0;
+sealNextCount = 0;
 
 function talkingNext(text) {
     if (text == "turtle") {
         if (turtleNextCount == 0){
             reverseAnimation(talkingTurtlePerson, "talkingPersonUp");
             reverseAnimation(talkingTurtlePersonBubble, "talkingBubbleUp");
-            reverseAnimation(turtleNextButton, "turtleNextButtonUp");
+            reverseAnimation(turtleNextButton, "nextButtonUp");
 
             addAnimation(turtleGuessItemContainer, "turtleGuessItemContainerUp");
             turtleNextCount += 1;
@@ -83,7 +91,7 @@ function talkingNext(text) {
         } else if (turtleNextCount == 1) {
             reverseAnimation(turtleEnding, "turtleEndingUp");
             reverseAnimation(turtleEndingBubble, "turtleEndingBubbleUp");
-            reverseAnimation(turtleNextButton, "turtleNextButtonUp");
+            reverseAnimation(turtleNextButton, "nextButtonUp");
 
             setTimeout(() => {
                 updateScreen("gameMenu");
@@ -93,6 +101,16 @@ function talkingNext(text) {
             turtleNextCount += 1;
         }
     }
+
+    if (text == "seal") {
+        if (sealNextCount == 0){
+            reverseAnimation(talkingSealPerson, "talkingPersonUp");
+            reverseAnimation(talkingSealPersonBubble, "talkingBubbleUp");
+            reverseAnimation(sealNextButton, "nextButtonUp");
+            
+            addAnimation(sealRemoveNetContainer, "sealRemoveNetContainerUp");
+        }
+    }
 }
 
 function turtleGuessItemChoice(option) {
@@ -100,5 +118,18 @@ function turtleGuessItemChoice(option) {
 
     addAnimation(turtleEnding, "turtleEndingUp");
     addAnimation(turtleEndingBubble, "turtleEndingBubbleUp");
-    addAnimation(turtleNextButton, "turtleNextButtonUp")
+    addAnimation(turtleNextButton, "nextButtonUp");
+}
+
+function sealRemoveNet(netNumber) {
+    addAnimation(netNumber, "netFallDown");
+    setTimeout(() => {
+        netNumber.style.display = "none";
+    }, 1000);
+
+    if (netNumber == sealNet4) {
+        setTimeout(() => {
+            reverseAnimation(sealRemoveNetContainer, "sealRemoveNetContainerUp");
+        }, 1000);
+    }
 }

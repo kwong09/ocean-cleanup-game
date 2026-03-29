@@ -70,11 +70,14 @@ html {
     top: 250px;
 }
 
-#talkingTurtlePerson {
+.talkingPerson {
     height: 200px;
     width: 150px;
     position: relative;
     background-color: white;
+}
+
+#talkingTurtlePerson {
     left: 50px;
     animation: talkingPersonUp 1s ease-in;
     animation-fill-mode: forwards;
@@ -89,11 +92,14 @@ html {
     }
 }
 
-#talkingTurtlePersonBubble {
+.talkingPersonBubble {
     height: 200px;
     width: 400px;
     background-color: white;
     position: relative;
+}
+
+#talkingTurtlePersonBubble {
     left: 250px;
     animation: talkingBubbleUp 1s ease-in;
     animation-fill-mode: forwards;
@@ -124,7 +130,7 @@ html {
 }
 
 
-@keyframes turtleNextButtonUp {
+@keyframes nextButtonUp {
     0% {
         bottom: -300px;
     }
@@ -237,22 +243,92 @@ html {
 #sealNextButton {
     left: 750px;
     bottom: -500px;
-    animation: sealNextButtonUp 1s ease-in;
+    animation: nextButtonUp 1s ease-in;
     animation-fill-mode: forwards;
     animation-delay: 0.5s;
 }
 
-@keyframes sealNextButtonUp {
+#talkingSealPerson {
+    left: 50px;
+    animation: talkingPersonUp 1s ease-in;
+    animation-fill-mode: forwards;
+}
+
+#talkingSealPersonBubble {
+    left: 250px;
+    animation: talkingBubbleUp 1s ease-in;
+    animation-fill-mode: forwards;
+}
+
+#sealRemoveNetContainer {
+    height: 300px;
+    width: 500px;
+    position: relative;
+    background-color: pink;
+    left: 200px;
+    bottom: -500px;
+
+    animation: none;
+    animation-fill-mode: forwards;
+}
+
+@keyframes sealRemoveNetContainerUp {
     0% {
-        bottom: -700px;
+        bottom: -500px;
     }
     100% {
-        bottom: -500px;
+        bottom: 250px;
+    }
+}
+
+.sealRemoveNet {
+    height: 200px;
+    width: 350px;
+    position: absolute;
+    left: 75px;
+    bottom: 50px;
+}
+
+#sealNet1 {
+    background-image: url("assets/net1.png");
+    animation-timing-function: ease-out;
+    will-change: transform;
+}
+#sealNet2 {
+    background-image: url("assets/net2.png");
+    animation-timing-function: ease-out;
+    will-change: transform;
+}
+#sealNet3 {
+    background-image: url("assets/net3.png");
+    animation-timing-function: ease-out;
+    will-change: transform;
+}
+#sealNet4 {
+    background-image: url("assets/net4.png");
+    animation-timing-function: ease-out;
+    will-change: transform;
+}
+#seal {
+    background-image: url("assets/seal.png");
+}
+
+@keyframes netFallDown {
+    0% {
+        transform: translateY(0px);
+        opacity: 1;
+        pointer-events: none;
+    }
+    100%{
+        transform: translateY(100px);
+        opacity: 0;
+        pointer-events: none;
     }
 }
 
 
 /* hovering with pointer */
-#startGameButton:hover, .nextButton:hover, .turtleGuessItem:hover, .startGameButtons:hover {
+#startGameButton:hover, .nextButton:hover, .turtleGuessItem:hover, .startGameButtons:hover,
+#sealNet1, #sealNet2, #sealNet3, #sealNet4 {
     cursor: pointer;
 }
